@@ -1,0 +1,25 @@
+{
+  "name": "get-refresh-token",
+  "version": "1.0.0",
+  "description": "",
+  "main": "oauth2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e1ton1au/get-refresh-token.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/e1ton1au/get-refresh-token/issues"
+  },
+  "homepage": "https://github.com/e1ton1au/get-refresh-token#readme",
+  "dependencies": {
+    "googleapis": "^46.0.0",
+    "open": "^7.0.0",
+    "server-destroy": "^1.0.1"
+  }
+}
