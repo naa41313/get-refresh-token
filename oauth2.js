@@ -62,11 +62,11 @@ async function authenticate(scopes) {
           if (req.url.indexOf('/oauth2callback') > -1) {
             const qs = new url.URL(req.url, 'http://localhost:3000')
               .searchParams;
-            res.end('Authentication successful! Please return to the console.');
-            server.destroy();
             const {tokens} = await oauth2Client.getToken(qs.get('code'));
             oauth2Client.credentials = tokens; // eslint-disable-line require-atomic-updates
             resolve(oauth2Client);
+            res.end(JSON.stringify(tokens, null, 2));
+            server.destroy();
           }
         } catch (e) {
           reject(e);
@@ -80,13 +80,6 @@ async function authenticate(scopes) {
   });
 }
 
-async function runSample() {
-  // retrieve user profile
-  const res = await plus.people.get({userId: 'me'});
-  console.log(res.data);
-}
-
-const scopes = ['https://www.googleapis.com/auth/plus.me'];
+const scopes = process.argv[2].split(',').map(scope => `https://www.googleapis.com/auth/${scope}`)
 authenticate(scopes)
-  .then(client => runSample(client))
   .catch(console.error);
