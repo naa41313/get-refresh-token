@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/e1ton1au/get-refresh-token#readme",
   "dependencies": {
-    "googleapis": "^46.0.0",
-    "open": "^7.0.0",
-    "server-destroy": "^1.0.1"
+    "googleapis": "67.0.0",
+    "open": "7.3.1",
+    "server-destroy": "1.0.1"
   }
 }
